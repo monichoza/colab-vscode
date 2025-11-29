@@ -35,7 +35,28 @@ This directory contains a standalone implementation of the Google Colab plugin l
 
 ## 📋 Available Scripts
 
-### Simple Colab Client (Recommended)
+### CLI Tool (Recommended)
+
+The `run-colab.js` provides a comprehensive CLI tool for all functionality:
+
+```bash
+# Run the demo
+node run-colab.js demo
+
+# Start authentication flow
+node run-colab.js auth
+
+# Test with dummy token (shows error handling)
+node run-colab.js test-auth
+
+# Show project status
+node run-colab.js status
+
+# Get help
+node run-colab.js help
+```
+
+### Simple Colab Client
 
 The `simple-colab-client.ts` provides a clean, dependency-free implementation:
 
@@ -188,8 +209,10 @@ const ccuInfo = await client.getCcuInfo();
 ### Project Structure
 
 ```
+├── run-colab.js               # Node.js CLI tool (recommended)
 ├── simple-colab-client.ts     # Simplified standalone client
 ├── standalone-colab.ts        # Full extension logic client
+├── example-usage.ts           # Example integration code
 ├── src/                       # Original VSCode extension source
 │   ├── colab/                 # Colab API client and logic
 │   ├── auth/                  # Authentication handling
